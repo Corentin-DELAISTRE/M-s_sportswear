@@ -12,7 +12,6 @@ function afficheLacarte(){
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    
     //Je déclare une variable pour mon map pin
     var myIcon = L.icon({
         //Chemin et propriétés du map pin
