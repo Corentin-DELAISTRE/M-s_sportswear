@@ -1,0 +1,859 @@
+/*GENERAL*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Archivo";
+    src: url(./assets/polices/Archivo_Black/ArchivoBlack-Regular.ttf);
+}
+@font-face {
+    font-family: "Roboto";
+    src: url(./assets/polices/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "Luciole";
+    src: url(./assets/polices/Luciole/Luciole-Regular.ttf)
+}
+:root{
+    --dark:#222222;
+    --blue:#0e6286;
+    --light-grey:#ebebeb;
+    --white:#ffffff;
+    --blue-hover:#3e8bac;
+    --black:#000000;
+}
+h1{
+    font-family: 'Archivo';
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--black);
+}
+h2{
+    font-family: 'Archivo';
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--black);
+}
+h3{
+    font-family: 'Archivo';
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--white);
+}
+h6{
+    font-family: "Roboto";
+    font-size: 18px;
+    padding: 5px 0;
+}
+a{
+    font-family: "Roboto";
+    font-size: 16px;
+    text-decoration: none;
+    height: fit-content;
+    transition: color 1s ease, border-color 0.5s ease
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    color:var(--blue-hover);
+    border-color: var(--blue-hover);
+}
+.ml{
+    color: var(--blue-hover);
+}
+p{
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 400;
+}
+ul{
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 400;
+    list-style: none;
+}
+ul li a{
+    color: var(--white);
+}
+nav ul li a:visited{
+    color: var(--white);
+}
+nav ul li a:hover{
+    color: var(--blue-hover);
+    border-color: var(--blue-hover);
+}
+label{
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 700;
+}
+.cont1200{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.flexwrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.spacebetween{
+    justify-content: space-between;
+}
+.justcenter{
+    justify-content: center;
+}
+.justend{
+    justify-content: end;
+}
+.align-center{
+    align-items: center;
+}
+.flexcolumn{
+    flex-direction: column;
+}
+.textcenter{
+    text-align: center;
+}
+.wfit{
+    width: fit-content;
+}
+.w100{
+    width: 100%;
+}
+.w90{
+    width: 90%;
+}
+.w75{
+    width: 75%;
+}
+.w50{
+    width: 50%;
+}
+.w45{
+    width: 45%;
+}
+.w35{
+    width: 35%;
+}
+.w30{
+    width: 30%;
+}
+.w28{
+    width: 28%;
+}
+.w25{
+    width: 25%;
+}
+.w23{
+    width: 23%;
+}
+.w20{
+    width: 20%;
+}
+.w15{
+    width: 15%;
+}
+.w10{
+    width: 10%;
+}
+.w8{
+    width: 8%;
+}
+.mbot5{
+    margin-bottom: 5rem;
+}
+.mbot15{
+    margin-bottom: 15rem;
+}
+.g10{
+    gap: 10px;
+}
+.g20{
+    gap: 20px;
+}
+.g32{
+    gap: 32px;
+}
+.g64{
+    gap: 64px;
+}
+.g150{
+    gap: 150px;
+}
+.responsive-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.trans-btn{
+    color: var(--black);
+    padding: 12px 32px;
+    border: solid black 2px;
+}
+.blue-btn{
+    color: var(--white);
+    background-color: var(--blue);
+    padding: 12px 32px;
+}
+.blue-btn:hover{
+    color:var(--white)
+}
+.nouv-btn{
+    color: var(--white);
+}
+.dark-bg{
+    background-color: var(--dark);
+    color: var(--white);
+}
+.d-none{
+    display: none;
+}
+.input-error{
+    border: 1px solid red;
+}
+.p-error{
+    color:red;
+}
+.prix{
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--blue-hover);
+}
+.luciole{
+    font-family: "Luciole";
+}
+/*TOGGLE POUR POLICE ACCESSIBLE*/
+.access-btn{
+    background-color: var(--dark);
+    width: fit-content;
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 10px 0 0 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-left: solid 1px var(--white);
+    border-top: solid 1px var(--white);
+    z-index: 10000;
+}
+.onoffswitch {
+    position: relative; width: 70px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #3E8BAC; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 10px; margin: 5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 46px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+/*HEADER*/
+header{
+    height: 5rem;
+    padding: 0 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+}
+.logo{
+    width: 104px;
+}
+header ul{
+    list-style: none;
+}
+.pad-lien{
+    padding: 12px 32px;
+}
+.active-header{
+    border: solid white 2px;
+}
+/*NAV MENU BURGER*/
+.none-burg{
+    display:none;
+}
+.burger-nav{
+    z-index:10000;
+    width: 300px;
+    height: 100%;
+    padding: 32px;
+    position: fixed;
+    top:5rem;
+    right:0;
+    transform: translateX(100%);
+    transition: transform 1s ease;
+}
+.open{
+    transform: translateX(0);
+}
+/*HERO*/
+.hero{
+    background-image: url(./assets/imagesSIte/banniere-running.jpg);
+    background-size: cover;
+    height: 600px;
+}
+.accroche{
+    width: 500px;
+    margin-left: 30%;
+}
+/*GAMME OUTDOOR*/
+.gamme-outdoor{
+    background-image: url(./assets/imagesSIte/accueil-bg-outdoor.jpg);
+    background-size: cover;
+    height:50rem;
+    background-position-y: 100%;
+}
+.nouveau{
+    height: fit-content;
+    width: 720px;
+    border: solid var(--black) 1px;
+    margin-top: -10rem;
+    margin-left: calc((100% - 1200px)/2)
+}
+.nouv-text{
+    padding: 24px;
+    width: 60%;
+}
+.nouv-prod{
+    font-size: 22px;
+    font-weight: 700;
+}
+/*OFFRE => PAS BESOIN DE CSS ICI LES CLASSES SUFFISENT*/
+/*MARQUES*/
+.marques{
+    padding: 32px 0;
+}
+.marques h2{
+    color: white;
+}
+/*FORMULAIRE*/
+.perso-input{
+    border: solid var(--black) 1px;
+    border-radius: 0;
+    height: 24px;
+}
+textarea{
+    border: solid var(--black) 1px;
+    border-radius: 0;
+    height: 140px;
+}
+/*FOOTER*/
+footer{
+    padding: 2rem 0;
+}
+#map{
+    width: 760px;
+    height: 420px;
+}
+footer a{
+    font-weight: 400;
+}
+/*PAGE CATEGORIE BASKET*/
+.path{
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+.black-badge{
+    padding: 5px 16px;
+    background-color: var(--dark);
+    color: var(--white);
+}
+.grey-badge{
+    padding: 5px 16px;
+    background-color: var(--light-grey);
+    color: var(--black);
+}
+.produit-card{
+    box-shadow: 4px 4px 16px rgba(0,0,0,0.33);
+    align-items: flex-start;
+    opacity:0;
+    transition: opacity ease 1s;
+    height: 400px;
+}
+.produit-card:hover{
+    cursor: pointer;
+}
+.produitcard-text{
+    padding: 10px;
+}
+.img-card{
+    height: 50%;
+}
+/*PAGE DETAIL*/
+/*ARTICLE PRODUIT*/
+.blue-badge{
+    padding: 5px 16px;
+    background-color: var(--blue);
+    color: var(--white);
+}
+.rond{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.rond-bleu{
+    background-color: #3531ef;
+}
+.rond-violet{
+    background-color:#911ced ;
+}
+.rond-rouge{
+    background-color: #eb3535;
+}
+.rond-vert{
+    background-color: #1bc92c;
+}
+.param-tech{
+    font-size: 18px;
+    font-weight: 700;
+}
+/*CAROUSEL*/
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*AVIS CONSO*/
+.picto-avis{
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+}
+.avis-prenom{
+    font-family: "Archivo";
+    font-size: 18px;
+}
+.etoiles{
+    color: var(--dark);
+    font-size: 18px;
+}
+/*RESPONSIVE*/
+@media all and (max-width:580px){
+    /*GENERAL*/
+    h1{
+        font-size: 22px;   
+    }
+    h2{
+        font-size: 22px;
+    }
+    h3{
+        width: 100%;
+    }
+    .cont1200{
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /*HEADER*/
+    header{
+        padding: 0 24px;
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+    .none-burg{
+        display: block;
+    }
+    header nav{
+        display: none;
+    }
+    .navpicto{
+        display:none;
+    }
+    /*ACCEUIL*/
+    /*HERO*/
+    .hero{
+        display: none;
+    }
+    /*CATEGORIES*/
+    .card{
+        width: 90%;
+        margin-bottom: 48px;
+    }
+    .cardbox{
+        justify-content: center;
+    }
+    .categories{
+        margin-bottom: 5rem;
+    }
+    /*PRESENTATION GAMME*/
+    .gamme-outdoor{
+        height: 300px;
+        background-position-x: 50%;
+    }
+    .presentation-outdoor{
+        width: 100%;
+        gap: 10px;
+    }
+    .presentation-outdoor p{
+        width: 80%;
+    }
+    /*NOUVEAUTE*/
+    .nouveau{
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 2rem;
+        border: none;
+        margin-bottom: 5rem;
+    }
+    .nouv-img{
+        width: 100%;
+    }
+    .nouv-text{
+        width: 100%;
+    }
+    /*OFFRE*/
+    .offre{
+        flex-direction: column-reverse;
+        margin-bottom: 5rem;
+    }
+    .offre-img{
+        width: 100%;
+    }
+    .offre-text{
+        width: 100%;
+        gap: 32px;
+    }
+    /*MARQUES*/
+    .marques{
+        margin-bottom: 5rem;
+    }
+    .marques>div>div{
+        flex-direction: column;
+    }
+    .brand-logo{
+        width: 50%;
+    }
+    /*PRESENTATION*/
+    .presentation{
+        margin-bottom: 5rem;
+    }
+    .text-pres{
+        width: 100%;
+    }
+    .img-pres{
+        width: 100%;
+    }
+    /*CONTACT*/
+    .contact{
+        flex-direction: column-reverse;
+        gap: 32px;
+        margin-bottom: 5rem;
+    }
+    .contact-text{
+        width: 100%;
+    }
+    form{
+        width: 100%;
+    }
+    #contact-form div{
+        width: 100%;
+    }
+    .contact-img{
+        width: 100%;
+    }
+    /*FOOTER*/
+    footer{
+        padding-bottom: 3rem;
+    }
+    .shops{
+        width: 100%;
+    }
+    #map{
+        width: 100%;
+        height: 400px;
+    }
+    .footcol{
+        width: 100%;
+    }
+    .foot-infos{
+        gap: 64px;
+    }
+    .footmid p{
+        width: 100%;
+    }
+    .foot-right{
+        margin-bottom: 1rem;
+    }
+    /*PAGE CATEGORIES BASKETS*/
+    .path{
+        margin-bottom: 2rem;
+    }
+    .path a{
+        font-size: 12px;
+    }
+    .basket-title{
+        margin-bottom: 2rem;
+    }
+    #search-form div{
+        width: 100%;
+    }
+    .produit-card{
+        width: 100%;
+        height: fit-content;
+    }
+    .card-container{
+        margin-bottom: 5rem;
+    }
+
+    /*PAGE DETAIL*/
+    .avis{
+        margin-bottom: 5rem;
+    }
+    .produit-container{
+        margin-bottom: 5rem;
+    }
+    .detail-img{
+        width: 100%;
+    }
+    .detail-text{
+        width: 100%;
+        gap: 24px;
+    }
+    .avis-container{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .text-avis{
+        gap: 10px;
+    }
+}
+@media all and (min-width:581px) and (max-width:1200px){
+        /*GENERAL*/
+        body{
+            width: 100%;
+        }
+        h3{
+            width: 100%;
+        }
+        .cont1200{
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 16px;
+        }
+        /*HEADER*/
+        header{
+            padding: 0 24px;
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+        .none-burg{
+            display: block;
+        }
+        header nav{
+            display: none;
+        }
+        .navpicto{
+            display:none;
+        }
+        /*ACCEUIL*/
+        /*HERO*/
+        .hero{
+            display: none;
+        }
+        /*CATEGORIES*/
+        .categories{
+            margin-bottom: 5rem;
+        }
+        .card{
+            width: 45%;
+            margin-bottom: 48px;
+        }
+        .cardbox{
+            justify-content: space-between;
+        }
+        /*PRESENTATION GAMME*/
+        .gamme-outdoor{
+            height: 400px;
+            background-position-x: 50%;
+        }
+        .presentation-outdoor{
+            width: 100%;
+            gap: 10px;
+        }
+        .presentation-outdoor p{
+            width: 80%;
+        }
+        /*NOUVEAUTE*/
+        .nouveau{
+            margin: 0;
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+        .nouv-img{
+            width: 30%;
+        }
+        .nouv-text{
+            width: 70%;
+            gap: 10px;
+        }
+        /*OFFRE*/
+        .offre{
+            flex-direction: column-reverse;
+            margin-bottom: 5rem;
+        }
+        .offre-img{
+            width: 100%;
+        }
+        .offre-text{
+            width: 100%;
+            gap: 32px;
+        }
+        /*MARQUES*/
+        .marques{
+            margin-bottom: 5rem;
+        }
+        .brand-logo{
+            width: 15%;
+        }
+        /*PRESENTATION*/
+        .presentation{
+            margin-bottom: 5rem;
+            flex-direction: column;
+        }
+        .text-pres{
+            width: 100%;
+        }
+        .img-pres{
+            width: 100%;
+            height: 400px;
+        }
+        .img-pres img{
+            object-position: top;
+        }
+        /*CONTACT*/
+        .contact{
+            flex-direction: column-reverse;
+            gap: 32px;
+            margin-bottom: 5rem;
+        }
+        .contact-text{
+            width: 100%;
+        }
+        form{
+            width: 100%;
+        }
+        .contact-img{
+            width: 100%;
+            height: 400px;
+        }
+        .contact-img img{
+            object-position: top;
+        }
+        /*FOOTER*/
+        footer{
+            padding-bottom: 3rem;
+        }
+        .shops{
+            width: 100%;
+        }
+        #map{
+            width: 100%;
+            height: 400px;
+        }
+        .footcol{
+            width: 40%;
+        }
+        .foot-infos{
+            gap: 64px;
+        }
+        .footmid p{
+            width: 100%;
+        }
+        .foot-right{
+            margin-bottom: 1rem;
+        }
+        /*PAGE CATEGORIES BASKETS*/
+        .path{
+            margin-bottom: 2rem;
+        }
+        .basket-title{
+            margin-bottom: 2rem;
+        }
+        #search-form div{
+            width: 45%;
+        }
+        .produit-card{
+            width: 45%;
+            height: 500px;
+        }
+        .card-container{
+            margin-bottom: 5rem;
+            justify-content: space-between;
+        }
+    
+        /*PAGE DETAIL*/
+        .avis{
+            margin-bottom: 5rem;
+        }
+        .produit-container{
+            margin-bottom: 5rem;
+        }
+        .detail-img{
+            width: 100%;
+        }
+        .detail-text{
+            width: 100%;
+            gap: 24px;
+        }
+        .avis-container{
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .text-avis{
+            gap: 10px;
+        }
+}

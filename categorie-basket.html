@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- Balisage des microdonnées ajouté par l'outil d'aide au balisage de données structurées de Google -->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Liste de produit de type baskets pour homme et pour sport d'extérieur de différentes marques comme The North Face, Puma, Adidas et Nike. Visibilité du prix, du nom du modèle, de la marque, d'une photo et d'une description pour chaque modèle. Possibilité de recherche et de tri par prix.">
+    <title>Liste de baskets de catégories sport d'extérieur pour homme.</title>
+    <link rel="canonical" href="http://127.0.0.1:5500/categorie-basket.html">
+    <link rel="shortcut icon" type="image/png" href="./assets/imagesSIte/favicon.png"/>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css">
+</head>
+<body>
+    <header class="flexwrap spacebetween w100 align-center dark-bg">                <!-- HEADER -->
+        <div class="logo">
+            <img src="./assets/imagesSIte/logo-blanc.png" alt="Logo de M'S" class="responsive-img">
+        </div>
+        <nav class="wfit">
+            <ul class="flexwrap spacebetween">
+                <li><a class="pad-lien" href="./index.html" title="Accès à la page d'acceuil">Home</a></li>
+                <li><a class="pad-lien" href="./categorie-basket.html" title="Accès à la page concernant les chaussures">Chaussures</a></li>
+                <li><a class="pad-lien" href="" title="Accès à la page concernant les vêtements">Vêtements</a></li>
+                <li><a class="pad-lien" href="" title="Accès à la page concernant les accessoires">Accessoires</a></li>
+                <li><a class="pad-lien active-header" href="" title="Accès à la page concernant les équipements d'extérieur">@utdoor</a></li>
+            </ul>
+        </nav>
+        <nav class="navpicto flexwrap wfit justend g20">
+            <div><a href="" title="Accès à mon panier"><img src="./assets/imagesSIte/header-pannier.png" alt="Icone de sac de shopping"></a></div>
+            <div><a href="" title="Accès à mon compte"><img src="./assets/imagesSIte/header-account.png" alt="Icone représentant une tête portant une casquette vue de profil"></a></div>
+        </nav>
+        <div id="burger" class="none-burg"><img class="responsive-img" src="./assets/imagesSIte/burger-bar.png" alt="Icone pour ouvrir le menu depliant"></div>
+    </header>
+    <nav class="burger-nav dark-bg flexwrap justcenter g32">                <!-- MENU BURGER -->
+        <ul class="flexwrap flexcolumn g32 align-center">
+            <li><a class="pad-lien" href="./index.html" title="Accès à la page d'acceuil">Home</a></li>
+            <li><a class="pad-lien" href="./categorie-basket.html" title="Accès à la page concernant les chaussures">Chaussures</a></li>
+            <li><a class="pad-lien" href="" title="Accès à la page concernant les vêtements">Vêtements</a></li>
+            <li><a class="pad-lien" href="" title="Accès à la page concernant les accessoires">Accessoires</a></li>
+            <li><a class="pad-lien active-header" href="" title="Accès à la page concernant les équipements d'extérieur">@utdoor</a></li>
+            <li><div><a href="" title="Accès à mon panier"><img src="./assets/imagesSIte/header-pannier.png" alt="Icone de sac de shopping"></a></div></li>
+            <li><div><a href="" title="Accès à mon compte"><img src="./assets/imagesSIte/header-account.png" alt="Icone représentant une tête portant une casquette vue de profil"></a></div></li>
+        </ul>
+    </nav>
+    <div class="access-btn flexwrap g10 align-center">          <!-- BOUTON ACCESSIBILITE -->
+        <p>Police accessible</p>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>
+    </div>
+    <main>
+        <div class="path cont1200 flexwrap">            <!-- BADGES CHEMIN -->
+            <a class="black-badge" href="" title="Accès à la page concernant les chaussures">Chaussures ></a>
+            <a class="grey-badge" href="./categorie-basket.html" title="Accès à la page concernant les baskets">Baskets ></a>
+        </div>
+        <div class="basket-title cont1200 mbot5">
+            <h1>Trouvez la paire parfaite de baskets pour vos activités sportives d'extérieur</h1>
+        </div>
+        <form action="toto" method="get" id="search-form" class="flexwrap g20 cont1200 mbot5">        <!-- METHODES DE RECHERCHE -->
+            <div class="flexwrap flexcolumn g10 w50">
+                <label for="search">Rechercher un produit</label>       <!-- BAR DE RECHERECHE -->
+                <input class="perso-input" type="search" name="search" id="search">
+            </div>
+            <div class="flexwrap flexcolumn g10">       <!-- METHODE DE TRI -->
+                <label for="tri">Trier par</label>
+                <select class="perso-input" name="tri" id="tri">
+                    <option value="defaut">Choisissez une methode de tri</option>
+                    <option value="croiss">Prix croissant</option>
+                    <option value="decroiss">Prix decroissant</option>
+                </select>
+            </div>
+        </form>
+        <div class="card-container cont1200 mbot15 flexwrap g32" id="card-container">         <!-- CONTAINER CARTES PRODUITS -->
+           <!-- <article class="produit-card w23 flexwrap g10">
+                    <div class="w100 img-card"><img class="responsive-img" src="./assets/imagesProduits/${e.photo}" alt="image de la paire de baskets ${e.nom}"></div>
+                    <div class="produitcard-text flexwrap g10">
+                    <div class="w100 flexwrap spacebetween align-center">
+                            <h6 class="w50"><strong>${e.nom}</strong></h6>
+                            <p class="prix">${e.prix}</p>
+                        </div>
+                        <p>${e.description}</p> 
+                    </div>
+                </article>
+             --> 
+        </div>
+    </main>
+    <footer class=" flexwrap dark-bg g64">            <!-- FOOTER -->
+        <div class="shops cont1200 flexwrap flexcolumn mbot5 align-center g20">         <!-- SHOPS -->
+            <div><img src="./assets/imagesSIte/logo-blanc.png" alt="Logo de M'S"></div>
+            <p><strong>Retrouvez nos boutiques près de chez vous</strong></p>
+            <div id="map"></div>
+        </div>
+        <div class="foot-infos cont1200 flexwrap spacebetween">
+            <div class="footcol footleft flexwrap w15 g20">
+                <h3>Plan du site</h3>
+                <ul>
+                    <li><a href="" title="Accès à la page d'acceuil">Accueil</a></li>
+                    <li><a href="" title="Accès à la page concernant les vêtements">Vêtements</a></li>
+                    <li><a href="./categorie-basket.html" title="Accès à la page concernant les chaussures">Chaussures</a></li>
+                    <li><a href="" title="Accès à la page concernant les accessoires">Accessoires</a></li>
+                    <li><a href="./outdoor.html" title="Accès à la page concernant les équipements d'extérieur">@utdoor</a></li>
+                    <li><a href="" title="Accès à la page de contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footcol footmid flexwrap g20 w28">
+                <h3>Horaires d'ouverture de nos boutiques</h3>
+                <p>Du lundi au Vendredi<br>10h-12h30 puis 13h30-19h</p>
+                <p>Le samedi<br>9h-18h30 non stop</p>
+            </div>
+            <div class="footcol footright flexwrap w35 g20">
+                <h3>Retrouvez nous sur les réseaux sociaux</h3>
+                <ul class="flexwrap g10">
+                    <li><a href="https://twitter.com/" title="Accès au site de Twitter"><img src="./assets/imagesSIte/TwitterX.png" alt="Logo de X"></a></li>
+                    <li><a href="https://www.facebook.com/" title="Accès au site de Facebook"><img src="./assets/imagesSIte/Facebook.png" alt="Logo de Facebook"></a></li>
+                    <li><a href="https://www.tiktok.com/" title="Accès au site de Tik-Tok"><img src="./assets/imagesSIte/TikTok.png" alt="Logo de Tik-Tok"></a></li>
+                    <li><a href="https://www.instagram.com/" title="Accès au site de Instagram"><img src="./assets/imagesSIte/Instagram.png" alt="Logo de Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="textcenter w100"><a href="" class="ml" title="Accès aux mentions légales">Mentions légales</a>, Site crée par Corentin DELAISTRE</p>
+    </footer>
+    <script src="access-app.js" defer></script>
+    <script src="./product-card-app.js" defer></script>
+    <script src="./node_modules/leaflet/dist/leaflet.js" defer></script>
+    <script src="./node_modules/gsap/dist/gsap.js" defer></script>
+    <script src="./node_modules/gsap/dist/ScrollTrigger.js" defer></script>
+    <script src="burger-app.js" defer></script>
+    <script src="./footer-app.js" defer></script>
+</body>
+</html>

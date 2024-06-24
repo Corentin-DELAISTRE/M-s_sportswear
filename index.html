@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boutique spécialisée dans le matériel de sport pour homme en partenariat avec les marques The North Face, Puma, Adidas et Nike. Nous proposons des vêtements, des accessoires ainsi que des chaussures qui allient confort, respirabilité et protection pour tous les types d'activitées sportives. Une nouvelle gamme pour les activitées d'extérieur est désormais disponible.">
+    <title>Boutique de vêtements, chaussures et accessoires divers de sport pour homme.</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/imagesSIte/favicon.png"/>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css">
+</head>
+<body id="body">
+    <header class="flexwrap spacebetween w100 align-center dark-bg">                <!-- HEADER -->
+        <div class="logo">
+            <img src="./assets/imagesSIte/logo-blanc.png" alt="Logo de M'S" class="responsive-img">
+        </div>
+        <nav class="wfit">
+            <ul class="flexwrap spacebetween">
+                <li><a class="pad-lien" href="./index.html" title="Accès à la page d'acceuil">Home</a></li>
+                <li><a class="pad-lien" href="./categorie-basket.html" title="Accès à la page concernant les chaussures">Chaussures</a></li>
+                <li><a class="pad-lien" href="" title="Accès à la page concernant les vêtements">Vêtements</a></li>
+                <li><a class="pad-lien" href="" title="Accès à la page concernant les accessoires">Accessoires</a></li>
+                <li><a class="pad-lien active-header" href="" title="Accès à la page concernant les équipements d'extérieur">@utdoor</a></li>
+            </ul>
+        </nav>
+        <nav class="navpicto flexwrap wfit justend g20">
+            <div><a href="" title="Accès à mon panier"><img src="./assets/imagesSIte/header-pannier.png" alt="Icone de sac de shopping"></a></div>
+            <div><a href="" title="Accès à mon compte"><img src="./assets/imagesSIte/header-account.png" alt="Icone représentant une tête portant une casquette vue de profil"></a></div>
+        </nav>
+        <div id="burger" class="none-burg"><img class="responsive-img" src="./assets/imagesSIte/burger-bar.png" alt="Icone pour ouvrir le menu depliant"></div>
+    </header>
+    <nav class="burger-nav dark-bg flexwrap justcenter g32">                <!-- MENU BURGER -->
+        <ul class="flexwrap flexcolumn g32 align-center">
+            <li><a class="pad-lien" href="./index.html" title="Accès à la page d'acceuil">Home</a></li>
+            <li><a class="pad-lien" href="./categorie-basket.html" title="Accès à la page concernant les chaussures">Chaussures</a></li>
+            <li><a class="pad-lien" href="" title="Accès à la page concernant les vêtements">Vêtements</a></li>
+            <li><a class="pad-lien" href="" title="Accès à la page concernant les accessoires">Accessoires</a></li>
+            <li><a class="pad-lien active-header" href="" title="Accès à la page concernant les équipements d'extérieur">@utdoor</a></li>
+            <li><div><a href="" title="Accès à mon panier"><img src="./assets/imagesSIte/header-pannier.png" alt="Icone de sac de shopping"></a></div></li>
+            <li><div><a href="" title="Accès à mon compte"><img src="./assets/imagesSIte/header-account.png" alt="Icone représentant une tête portant une casquette vue de profil"></a></div></li>
+        </ul>
+    </nav>
+    <div class="access-btn flexwrap g10 align-center">          <!-- BOUTON ACCESSIBILITE -->
+        <p>Police accessible</p>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>
+    </div>
+    <main>
+        <div class="hero w100 flexwrap align-center mbot5">                      <!-- HERO -->
+            <div class="accroche flexwrap g32">
+                <h2 class="titre-accroche w100">Ne cherchez plus chaussures à votre pied</h2>
+                <p class="w100">Découvrez notre toute nouvelle gamme de baskets M'S déclinée en 4 coloris</p>
+                <a href="./detail.html" class="blue-btn" title="Accès à la page concernant la nouvelle gamme de baskets M'S">Découvrir la
+                    gamme</a>
+                </div>
+        </div>
+        <section class="categories g64 cont1200 flexwrap mbot15">        <!-- CATEGORIES -->
+            <h2 class="w100">Nos produits par catégories</h2>
+            <div class="cardbox w100 flexwrap spacebetween">
+                <article class="card g32 w28 flexwrap">          <!-- CHAUSSURES -->
+                    <div class="topcard w100">
+                        <h6 class="title-card dark-bg textcenter">CHAUSSURES</h6>
+                        <div class="card-img w100">          
+                            <img class="responsive-img" src="./assets/imagesSIte/categorie-chaussures.jpg" alt="Image vue de dos de jambes d'une personne en train de courir avec des baskets de sport sur une route lors d'un couché de soleil">
+                        </div>
+                    </div>
+                    <p>
+                        Baskets, Chaussures de montagnes, Chaussures hautes, chaussures basses, ... partez bien équipés
+                    </p>
+                    <a href="" class="trans-btn w100 textcenter" title="Accès à la page concernant les modèles de chaussures">Voir les modèles de chaussures</a>
+                </article>
+                <article class="card g32 w28 flexwrap">          <!-- ACCESSOIRES -->
+                    <div class="topcard w100">
+                        <h6 class="title-card dark-bg textcenter">ACCESSOIRES</h6>
+                        <div class="card-img w100">
+                            <img class="responsive-img" src="./assets/imagesSIte/categorie-accessoires.jpg" alt="Image d'une personne en équipement de randonnée avec un sac à dos prenant des photos et situé dans un paysage de montagnes enneigées">
+                        </div>
+                    </div>
+                    <p>
+                        Sac à dos de randonnées, toiles de tente, réchauds, matériel de sport interieur et exterieur
+                    </p>
+                    <a href="" class="trans-btn w100 textcenter" title="Accès à la page concernant les accessoires">Voir les accessoires</a>
+                </article>
+                <article class="card g32 w28 flexwrap">          <!-- VETEMENTS -->
+                    <div class="topcard w100">
+                        <h6 class="title-card dark-bg textcenter">VÊTEMENTS</h6>
+                        <div class="card-img w100">
+                            <img class="responsive-img" src="./assets/imagesSIte/categorie-vetements.jpg" alt="Image d'une personne en tenue de sport faisant ses étirements dans la rue">
+                        </div>
+                    </div>
+                        <p>
+                            Vêtements tous sports, jogging, shorts, tee-shirts , hoodies, vestes, chaussettes et débardeurs
+                        </p>
+                        <a href="" class="trans-btn w100 textcenter" title="Accès à la page concernant les vêtements">Voir les modèles de vêtements</a>
+                </article>
+            </div>
+        </section>
+        <section class="gamme-outdoor flexwrap align-center">         <!-- GAMME OUTDOOR -->
+            <div class="gamme-content cont1200 flexwrap flexcolumn g150">
+                <div class="presentation-outdoor g32 w45 flexwrap">      <!-- PRESENTATION GAMME -->
+                    <h2 class="w100">Découvrez notre gamme @utdoor</h2>
+                    <p class="w100">Une sélection parmis les vêtements techniques de notre fabrication ainsi que des meilleures marques sur le marché</p>
+                    <a href="" class="trans-btn" title="Accès à la page concernant les articles de la gamme outdoor">Voir les articles de la gamme @utdoor</a>
+                </div>
+            </div>
+        </section>
+        <div class=""> <!-- NOUVEAUTE -->
+            <article class="nouveau flexwrap dark-bg mbot15">
+                <div class="nouv-img"><img class="responsive-img" src="./assets/imagesSIte/outdoor6.jpg"
+                    alt="Image d'un T-shirt de sport noir et bleu">
+                </div>
+                <div class="nouv-text flexwrap flexcolumn spacebetween align-center">
+                    <div class="flexwrap g20 w100">
+                        <div class="nouv-detail w100 flexwrap spacebetween">
+                            <h6 class="nouv-prod"><strong>NOUVEAUTÉ</strong></h6>
+                            <p class="prix">40€</p>
+                        </div>
+                        <p class="w100">Tee shirt technique rando+ , résistant , confortable, tissus déperlant</p>
+                        <ul>
+                            <li>• Respirabilité</li>
+                            <li>• Imperméabilité</li>
+                            <li>• Anti-odeurs</li>
+                        </ul>
+                    </div>
+                    <a href="" class="nouv-btn wfit" title="Accès au detail du nouveau produit">Voir le détail du produit</a>
+                </div>
+            </article>
+        </div>
+        <article class="offre cont1200 flexwrap spacebetween mbot15">         <!-- OFFRE -->
+            <div class="offre-text w35 flexwrap">
+                <h2 class="w100">Profitez de l'offre</h2>
+                <p><strong>L'ensembe jogging M'S noir<br>disponible en plusieurs tailles</strong></p>
+                <p>Ce jogging alie confort légereté et douceur, pour du sport à l'exterieur comme pour les moments de détente à la maison</p>
+                <a href="" class="trans-btn" title="Accès au détail du produit">Voir le détail du produit</a>
+            </div>
+            <div class="offre-img w45">
+                <img class="responsive-img" src="./assets/imagesSIte/Joogin-promo.jpg" alt="Image d'un ensemble sweat et jogging noir de marque adidas">
+            </div>
+        </article>
+        <section class="marques dark-bg mbot15">       <!-- MARQUES -->
+            <div class="cont1200 flexwrap g32">
+                <h2 class="w100">Ces marques nous font confiance</h2>
+                <div class="flexwrap spacebetween align-center w100">
+                    <div class="brand-logo w15"><img class="responsive-img" src="./assets/imagesSIte/the-north-face.png" alt="Logo de The North Face"></div>
+                    <div class="brand-logo w15"><img class="responsive-img" src="./assets/imagesSIte/puma.png" alt="Logo de Puma"></div>
+                    <div class="brand-logo w10"><img class="responsive-img" src="./assets/imagesSIte/adidas.png" alt="Logo de Adidas"></div>
+                    <div class="brand-logo w10"><img class="responsive-img" src="./assets/imagesSIte/nike.png" alt="Logo de Nike"></div>
+                </div>
+            </div>
+        </section>
+        <article class="presentation flexwrap mbot15 cont1200 ">            <!-- PRESENTATION -->
+            <div class="flexwrap g64 align-center spacebetween">
+                <div class="text-pres w50 flexwrap g32">
+                    <h1>M'S - Votre partenaire optimal pour des vêtements et équipements de sport de qualité</h1>
+                    <p>
+                        M'S est une boutique fondée en 1993 spécialisée dans les <strong>vêtements , chaussures et équipements divers de sports pour hommes</strong>. Notre objectif est de vous fournir le meilleur pour la pratique de vos <strong>activités sportives en intérieur comme en extérieur</strong>. Nous travaillons avec les plus grandes marques et nous disposons de nos propres ateliers de fabrication. Parmi les nouveautés issues de notre pole recherche et développement, <strong>les produits de la gamme @utdoor pour les activités de plein air</strong>, qui allient confort, respirabilité et protection grâce a nos matériaux à la pointe de la technologie textile.
+                    </p>
+                </div>
+                <div class="img-pres w35">
+                    <img class="responsive-img" src="./assets/imagesSIte/presentation.jpg" alt="Image d'un homme en train de jouer au tennis. Il est en train de sauter en tenant sa raquette et arbore une expression heureuse">
+                </div>
+            </div>
+        </article>
+        <section class="contact flexwrap spacebetween cont1200 mbot15">       <!-- CONTACT -->
+            <div class="contact-img w45">
+                <img src="./assets/imagesSIte/illustration-boxe.jpg" class="responsive-img" alt="Photo en noir et blanc d'un homme s'entrainant face à un sac de frappe dans une salle de sport. L'homme est en l'air et s'apprète à donner un coup de pied au sac de frappe.">
+            </div>
+            <div class="contact-text flexwrap w50 g32">
+                <h2 class="w100">Contactez-nous</h2>
+                <p>
+                    Pour des informations sur nos produits, pour toute demande de renseignement ou pour nous faire remonter un problème techique sur le site , merci de remplir le formulaire suivant :
+                </p>
+                <form action="toto" method="get" id="contact-form" class="flexwrap spacebetween g20" novalidate>          <!-- FORMULAIRE -->
+                    <div class="flexwrap flexcolumn w45 g10">   <!-- NOM -->
+                        <label for="nom">Votre nom</label>
+                        <input class="perso-input" type="text" name="nom" id="nom">
+                        <p class="p-error d-none" id="error-nom">Vous avez fait une bêtise...</p>
+                    </div>
+                    <div class="flexwrap flexcolumn w45 g10">   <!-- PRENOM -->
+                        <label for="prenom">Votre prénom</label>
+                        <input class="perso-input" type="text" name="prenom" id="prenom">
+                        <p class="p-error d-none" id="error-prenom">Vous avez fait une bêtise...</p>
+                    </div>
+                    <div class="flexwrap flexcolumn w100 g10">   <!-- EMAIL -->
+                        <label for="email">Votre adresse de messagerie</label>
+                        <input class="perso-input" type="email" name="email" id="email">
+                        <p class="p-error d-none" id="error-email">Vous avez fait une bêtise...</p>
+                    </div>
+                    <div class="flexwrap flexcolumn w100 g10">   <!-- OBJET -->
+                        <label for="objet">Objet</label>
+                        <select class="perso-input" name="objet" id="objet">
+                            <option value="defaut">Choisissez un objet</option>
+                            <option value="info-gen">Demande d'informations générales</option>
+                            <option value="pb-site">Signaler un problème sur le site</option>
+                            <option value="info-prod">Demande d'informations sur un produit</option>
+                            <option value="pb-produit">Signaler un problème sur un produit</option>
+                        </select>
+                        <p class="p-error d-none" id="error-objet">Vous avez fait une bêtise...</p>
+                    </div>
+                    <div id="ref-div" class="flexwrap flexcolumn w100 g10  d-none">   <!-- REFERENCE -->
+                        <label for="ref">Veuillez renseigner la référence du produit</label>
+                        <input class="perso-input" type="text" name="ref" id="ref">
+                        <p class="p-error d-none" id="error-ref">Vous avez fait une bêtise...</p>
+                    </div>
+                    <div class="flexwrap flexcolumn w100 g10">   <!-- MESSAGE -->
+                        <label for="message">Votre message</label>
+                        <textarea name="message" id="message"></textarea>
+                        <p class="p-error d-none" id="error-message">Vous avez fait une bêtise...</p>
+                    </div>
+                    <div>            <!-- SUBMIT -->
+                        <input class="blue-btn" type="submit" id="submit" value="Envoyer votre message">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class=" flexwrap dark-bg g64">            <!-- FOOTER -->
+        <div class="shops cont1200 flexwrap flexcolumn mbot5 align-center g20">         <!-- SHOPS -->
+            <div><img src="./assets/imagesSIte/logo-blanc.png" alt="Logo de M'S"></div>
+            <p><em>Retrouvez nos boutiques près de chez vous</em></p>
+            <div id="map"></div>
+        </div>
+        <div class="foot-infos cont1200 flexwrap spacebetween">
+            <div class="footcol footleft flexwrap w15 g20">
+                <h3>Plan du site</h3>
+                <ul>
+                    <li><a href="" title="Accès à la page d'acceuil">Accueil</a></li>
+                    <li><a href="" title="Accès à la page concernant les vêtements">Vêtements</a></li>
+                    <li><a href="./categorie-basket.html" title="Accès à la page concernant les chaussures">Chaussures</a></li>
+                    <li><a href="" title="Accès à la page concernant les accessoires">Accessoires</a></li>
+                    <li><a href="./outdoor.html" title="Accès à la page concernant les équipements d'extérieur">@utdoor</a></li>
+                    <li><a href="" title="Accès à la page de contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footcol footmid flexwrap g20 w28">
+                <h3>Horaires d'ouverture de nos boutiques</h3>
+                <p>Du lundi au Vendredi<br>10h-12h30 puis 13h30-19h</p>
+                <p>Le samedi<br>9h-18h30 non stop</p>
+            </div>
+            <div class="footcol footright flexwrap w35 g20">
+                <h3>Retrouvez nous sur les réseaux sociaux</h3>
+                <ul class="flexwrap g10">
+                    <li><a href="https://twitter.com/" title="Accès au site de Twitter"><img src="./assets/imagesSIte/TwitterX.png" alt="Logo de X"></a></li>
+                    <li><a href="https://www.facebook.com/" title="Accès au site de Facebook"><img src="./assets/imagesSIte/Facebook.png" alt="Logo de Facebook"></a></li>
+                    <li><a href="https://www.tiktok.com/" title="Accès au site de Tik-Tok"><img src="./assets/imagesSIte/TikTok.png" alt="Logo de Tik-Tok"></a></li>
+                    <li><a href="https://www.instagram.com/" title="Accès au site de Instagram"><img src="./assets/imagesSIte/Instagram.png" alt="Logo de Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="textcenter w100"><a href="" class="ml" title="Accès aux mentions légales">Mentions légales</a>, Site crée par Corentin DELAISTRE</p>
+    </footer>
+    <script src="./node_modules/leaflet/dist/leaflet.js" defer></script>
+    <script src="./form-app.js" defer></script>
+    <script src="access-app.js" defer></script>
+    <script src="burger-app.js" defer></script>
+    <script src="./footer-app.js" defer></script>
+</body>
+</html>
